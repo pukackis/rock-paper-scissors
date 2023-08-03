@@ -1,0 +1,39 @@
+.container {
+  width: 960px;
+  margin: 0px auto 0px auto;
+}
+
+.score_sign {
+  display: flex;
+  justify-content: center;
+}
+.scores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.player1,
+.player2 {
+  text-align: center;
+  margin: auto;
+}
+
+.buttons {
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.restart {
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+
+.who_won {
+  display: flex;
+  justify-content: center;
+}

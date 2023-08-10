@@ -33,7 +33,13 @@ const restartButton = document
   .querySelector(".restart")
   .addEventListener("click", init);
 // Event listeneners for game buttons
+const rockButtonPc = document.querySelector(".rock_pc");
 
+const paperButtonPc = document.querySelector(".paper_pc");
+
+const scissorsButtonPc = document.querySelector(".scissors_pc");
+
+// computer buttons
 const scorePlayer = document.querySelector(".current1");
 const scoreComputer = document.querySelector(".current2");
 const whoWon = document.querySelector(".who_won");
@@ -93,13 +99,25 @@ function playRound(playerSelection, computerSelection) {
       ); // informs who won the game
     }
     if (player === 5) {
-      updateRoundStatus(`You win the game with computer`);
+      updateRoundStatus(`You win the game with computer, congrats!!!`);
       playing = false;
     } else if (computer === 5) {
-      updateRoundStatus(`You lose the game with computer`);
+      updateRoundStatus(
+        `You lose the game with computer, better luck next time!`
+      );
       playing = false;
     }
   }
+  if (computerSelection === "rock") {
+    rockButtonPc.classList.add("afterPC");
+    setTimeout(() => rockButtonPc.classList.remove("afterPC"), 200);
+  } else if (computerSelection === "paper") {
+    paperButtonPc.classList.add("afterPC");
+    setTimeout(() => paperButtonPc.classList.remove("afterPC"), 200);
+  } else if (computerSelection === "scissors") {
+    scissorsButtonPc.classList.add("afterPC");
+    setTimeout(() => scissorsButtonPc.classList.remove("afterPC"), 200);
+  } //Adds animation to buttons
 }
 
 // playRound function is responsible for game mechanics, determines who won the game and informs player about current status
